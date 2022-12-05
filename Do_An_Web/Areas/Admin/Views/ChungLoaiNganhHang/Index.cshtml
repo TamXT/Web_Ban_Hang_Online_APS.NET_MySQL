@@ -1,0 +1,203 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        Chủng Loại - Ngành Hàng
+        <small>preview of simple</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#">Tables</a></li>
+        <li class="active">Simple</li>
+    </ol>
+</section>
+<!-- /.content-wrapper -->
+<!-- Main content -->
+<section class="content">
+    <div class="box">
+        <div class="box-header">
+            <h3 class="box-title">Chủng Loại Sản Phẩm</h3>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body no-padding">
+            <table class="table table-condensed">
+                <tr>
+                    <th style="width: 10px">#</th>
+                    <th>Task</th>
+                    <th>Progress</th>
+                    <th style="width: 40px">Label</th>
+                </tr>
+                <tr>
+                    <td>1.</td>
+                    <td>Sản Phẩm Đông Lạnh</td>
+                    <td>
+                        <div class="progress progress-xs">
+                            <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
+                        </div>
+                    </td>
+                    <td><span class="badge bg-red">55%</span></td>
+                </tr>
+                <tr>
+                    <td>2.</td>
+                    <td>Sản Phẩm Thịt - Cá Tươi</td>
+                    <td>
+                        <div class="progress progress-xs">
+                            <div class="progress-bar progress-bar-yellow" style="width: 70%"></div>
+                        </div>
+                    </td>
+                    <td><span class="badge bg-yellow">70%</span></td>
+                </tr>
+                <tr>
+                    <td>3.</td>
+                    <td>Sản Phẩm Sữa Tươi</td>
+                    <td>
+                        <div class="progress progress-xs progress-striped active">
+                            <div class="progress-bar progress-bar-primary" style="width: 30%"></div>
+                        </div>
+                    </td>
+                    <td><span class="badge bg-light-blue">30%</span></td>
+                </tr>
+                <tr>
+                    <td>4.</td>
+                    <td>Sản Phẩm Nước Uống</td>
+                    <td>
+                        <div class="progress progress-xs progress-striped active">
+                            <div class="progress-bar progress-bar-success" style="width: 90%"></div>
+                        </div>
+                    </td>
+                    <td><span class="badge bg-green">90%</span></td>
+                </tr>
+                <tr>
+                    <td>2.</td>
+                    <td>Sản Phẩm Đồ Ăn Vặt</td>
+                    <td>
+                        <div class="progress progress-xs">
+                            <div class="progress-bar progress-bar-yellow" style="width: 70%"></div>
+                        </div>
+                    </td>
+                    <td><span class="badge bg-yellow">70%</span></td>
+                </tr>
+                <tr>
+                    <td>3.</td>
+                    <td>Sản Phẩm Thức Ăn Nhanh</td>
+                    <td>
+                        <div class="progress progress-xs progress-striped active">
+                            <div class="progress-bar progress-bar-primary" style="width: 30%"></div>
+                        </div>
+                    </td>
+                    <td><span class="badge bg-light-blue">30%</span></td>
+                </tr>
+            </table>
+        </div>
+        <!-- /.box-body -->
+    </div>
+    <!-- /.box -->
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">Ngành Hàng Buôn Bán</h3>
+
+                    <div class="box-tools">
+                        <div class="input-group input-group-sm" style="width: 150px;">
+                            <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
+
+                            <div class="input-group-btn">
+                                <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body table-responsive no-padding">
+                    <table class="table table-hover">
+                        <tr>
+                            <th>Mã Sản Phẩm</th>
+                            <th>Tên Sản Phẩm</th>
+                            <th>Ngày Hết Hạn</th>
+                            <th>Số Lượng</th>
+                            <th>Giá Bán</th>
+                        </tr>
+                        <tr>
+                            <td>10001</td>
+                            <td>Cà Chua Bi 500g</td>
+                            <td>11-7-2023</td>
+                            <td><span class="label label-success">56</span></td>
+                            <td>35.450VNĐ</td>
+                        </tr>
+                        <tr>
+                            <td>10002</td>
+                            <td>Sữa Chua Tiết Trùng 'True Milk'</td>
+                            <td>12-3-2023</td>
+                            <td><span class="label label-warning">38</span></td>
+                            <td>41.990VNĐ</td>
+                        </tr>
+                        <tr>
+                            <td>10003</td>
+                            <td>Cá Basa Tươi 450g</td>
+                            <td>20-4-2023</td>
+                            <td><span class="label label-primary">18</span></td>
+                            <td>77.990VNĐ</td>
+                        </tr>
+                        <tr>
+                            <td>10004</td>
+                            <td>Thân Bò Úc Trung Đông 250g</td>
+                            <td>29-7-2023</td>
+                            <td><span class="label label-danger">26</span></td>
+                            <td>129.000VNĐ</td>
+                        </tr>
+                        <tr>
+                            <td>10005</td>
+                            <td>Cá Rô Đông Lạnh HTC 300g</td>
+                            <td>1-9-2023</td>
+                            <td><span class="label label-success">22</span></td>
+                            <td>46.150VNĐ</td>
+                        </tr>
+                        <tr>
+                            <td>10006</td>
+                            <td>Gà Ta C.P gói 1.2 - 1.6kg</td>
+                            <td>13-5-2023</td>
+                            <td><span class="label label-warning">21</span></td>
+                            <td>109.000VNĐ</td>
+                        </tr>
+                        <tr>
+                            <td>10007</td>
+                            <td>Bưởi Da Xanh Trái Từ 1.7kg trở lên</td>
+                            <td>30-9-2023</td>
+                            <td><span class="label label-primary">30</span></td>
+                            <td>59.000VNĐ</td>
+                        </tr>
+                        <tr>
+                            <td>10008</td>
+                            <td>Cam Vàng Úc Túi 1kg</td>
+                            <td>15-4-2023</td>
+                            <td><span class="label label-danger">17</span></td>
+                            <td>49.000VNĐ</td>
+                        </tr>
+                        <tr>
+                            <td>10009</td>
+                            <td>Thùng 48 hộp sữa tươi Nestlé socola 180ml</td>
+                            <td>21-11-2023</td>
+                            <td><span class="label label-success">34</span></td>
+                            <td>348.000VNĐ</td>
+                        </tr>
+                        <tr>
+                            <td>10010</td>
+                            <td>Kẹo dẻo hình gấu Yumearth 50g</td>
+                            <td>20-6-2023</td>
+                            <td><span class="label label-warning">29</span></td>
+                            <td>48.000VNĐ</td>
+                        </tr>
+                    </table>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+    </div>
+</section>

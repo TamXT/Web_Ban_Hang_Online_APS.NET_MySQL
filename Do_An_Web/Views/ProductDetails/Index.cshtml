@@ -1,0 +1,39 @@
+﻿@using Do_An_Web.Models;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    SanPham i = ViewData["SpCanXem"] as SanPham;
+}
+
+<div class="container-fluid page-header wow fadeIn" data-wow-delay="0.1s">
+    <div class="container">
+        <h1 class="display-3 mb-3 animated slideInDown">Chi Tiết Sản Phẩm</h1>
+        <nav aria-label="breadcrumb animated slideInDown">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a class="text-body" href="#">Home</a></li>
+                <li class="breadcrumb-item"><a class="text-body" href="#">Pages</a></li>
+                <li class="breadcrumb-item text-dark active" aria-current="page">Blog Grid</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<!-- Page Header End -->
+<!-- Blog Start -->
+<div class="container-xxl py-6">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-4">
+                <img class="img-fluid w-100" src="@i.hinhDD" alt="">
+            </div>
+            <div class="col-md-8">
+                <h1>@i.tenSP</h1>
+                <h5>********</h5>
+                <h3 style="color:red">@String.Format("{0:#,## Đồng}", i.giaBan)</h3>
+                <h5>@i.ndTomTat</h5>
+                <button style="background-color:aquamarine">BUY ONLINE</button>
+            </div>
+        </div>
+    </div>
+</div>
+

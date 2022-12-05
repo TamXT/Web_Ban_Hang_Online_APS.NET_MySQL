@@ -1,0 +1,9 @@
+﻿@using Do_An_Web.Models;
+@{
+    TaiKhoan x = Session["TtDangNhap"] as TaiKhoan;
+    if (x == null)
+    {
+        Response.Redirect("~/Login/Index");
+    }
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
