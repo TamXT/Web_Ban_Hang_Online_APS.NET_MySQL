@@ -1,18 +1,24 @@
-﻿
+﻿@using Do_An_Web.Models;
 @{
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+    List<BaiViet> ds = ViewData["DanhSachBV"] as List<BaiViet>;
 }
+
+<style>
+    form{
+        display: inline;
+    }
+</style>
 
 <section class="content-header">
     <h1>
         Danh Sách Bài Viết
-        <small>advanced tables</small>
     </h1>
     <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Tables</a></li>
-        <li class="active">Data tables</li>
+        <li><a href="@Url.Action("Index", "Dashboard")"><i class="fa fa-dashboard"></i> Home</a></li>
+        
+        <li class="Bài viết đã kiểm duyệt"></li>
     </ol>
 </section>
 
@@ -22,7 +28,7 @@
         <div class="col-xs-12">
             <div class="box">
                 <div class="box-header">
-                    <h3 class="box-title">Danh sách hệ thống</h3>
+                    <h3 class="box-title">Danh sách bài viết</h3>
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
@@ -31,85 +37,42 @@
                             <tr>
                                 <th>Mã Bài Viết</th>
                                 <th>Tên Bài Viết</th>
-                                <th>Ngày Đăng</th>
+                                <th>Ngày đăng</th>
                                 <th>Tài Khoản</th>
-                                <th>Đã Duyệt</th>
+                                <th>Số lần đọc</th>
+                                <th>Lệnh - Công cụ</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>100</td>
-                                <td>
-                                    Cà Chua Đỏ Tươi
-                                </td>
-                                <td>20/10/2021</td>
-                                <td>nght@gmail.com</td>
-                                <td>O</td>
-                            </tr>
-                            <tr>
-                                <td>101</td>
-                                <td>
-                                    Báp Cải Tươi Xanh
-                                </td>
-                                <td>25/10/2021</td>
-                                <td>đouynam@gmail.com</td>
-                                <td>O</td>
-                            </tr>
-                            <tr>
-                                <td>103</td>
-                                <td>
-                                    Sườn Heo Tươi 2Kg
-                                </td>
-                                <td>27/10/2021</td>
-                                <td>nghiang@gmail.com</td>
-                                <td>O</td>
-                            </tr>
-                            <tr>
-                                <td>104</td>
-                                <td>
-                                    Cá Ngừ
-                                </td>
-                                <td>30/10/2021</td>
-                                <td>ngrt@gmail.com</td>
-                                <td>O</td>
-                            </tr>
-                            <tr>
-                                <td>105</td>
-                                <td>
-                                    Cà Chua Đỏ Tươi
-                                </td>
-                                <td>20/10/2021</td>
-                                <td>nght@gmail.com</td>
-                                <td>O</td>
-                            </tr>
-                            <tr>
-                                <td>100</td>
-                                <td>
-                                    Cà Chua Đỏ Tươi
-                                </td>
-                                <td>20/10/2021</td>
-                                <td>nght@gmail.com</td>
-                                <td>O</td>
-                            </tr>
-                            <tr>
-                                <td>100</td>
-                                <td>
-                                    Cà Chua Đỏ Tươi
-                                </td>
-                                <td>20/10/2021</td>
-                                <td>nght@gmail.com</td>
-                                <td>O</td>
-                            </tr>
-                            <tr>
-                                <td>100</td>
-                                <td>
-                                    Cà Chua Đỏ Tươi
-                                </td>
-                                <td>20/10/2021</td>
-                                <td>nght@gmail.com</td>
-                                <td>O</td>
-                            </tr>
-                            </tfoot>
+                            @{ 
+                                foreach (BaiViet i in ds) 
+                                {
+                                    <tr>
+                                       <td>@i.maBV</td>
+                                       <td>@i.tenBV</td>
+                                       <td>@string.Format("{0:hh:mm [dd/MM/yyyy]}", i.ngayDang)<td>
+                                       <td>@i.TaiKhoan1.hoDem @i.TaiKhoan1.tenTV</td>
+                                       <td>@i.soLanDoc</td>
+                                       <td>
+                                           @using (Html.BeginForm("Active", "DanhSachBaiViet", FormMethod.Post))
+                                           {
+                                               @*<button class="btn btn-success" title="Cho phép hiện thị bài viết công khai">Duyệt bài</button>*@
+                                               <input type="hidden" name="maBaiViet" value="@i.maBV" />
+                                               <button class="btn btn-success" title="Cho phép hiện thị bài viết trên các trang công khai">@ViewBag.tdCuaNut</button>
+                                           }
+                                           <button class="btn btn-default" title="Cho phép sửa bài viết">Sửa nội dung</button>
+                                           @using (Html.BeginForm("Delete", "DanhSachBaiViet", FormMethod.Post))
+                                           {
+                                               <input type="hidden" name="maBaiViet" value="@i.maBV" />
+                                               <button class="btn btn-danger" title="Xóa bài viết">Xóa</button>
+                                           }
+
+                                       </td>
+                                    </tr>
+                                }
+                            }
+                            
+                       
                     </table>
                 </div>
                 <!-- /.box-body -->

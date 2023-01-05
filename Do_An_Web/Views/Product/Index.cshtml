@@ -2,6 +2,7 @@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    
 }
 
 <!-- Page Header Start -->
@@ -59,7 +60,7 @@
                                                 <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">New</div>
                                             </div>
                                             <div class="text-center p-4">
-                                                <a class="d-block h5 mb-2" href="">@j.tenSP</a>
+                                                <a class="d-block h5 mb-2" href="@Url.Action("Index", "ProductDetails", new {maSanPham=j.maSP})">@j.tenSP</a>
                                                 <span class="text-primary me-1">@String.Format("{0:#,## Đồng}", j.giaBan)</span>
                                                 <span class="text-body text-decoration-line-through">@String.Format("{0:#,## Đồng}", j.giamGia)</span>
                                             </div>

@@ -140,8 +140,11 @@
     <Compile Include="Areas\Admin\Controllers\KhachHangMoiController.cs" />
     <Compile Include="Areas\Admin\Controllers\SanPhamDangKinhDoanhController.cs" />
     <Compile Include="Areas\Admin\Controllers\SanPhamMoiController.cs" />
+    <Compile Include="Areas\Admin\Models\ThuongDung.cs" />
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\BlogController.cs" />
+    <Compile Include="Controllers\CartController.cs" />
+    <Compile Include="Controllers\CheckOutController.cs" />
     <Compile Include="Controllers\ContactUsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InformationBVController.cs" />
@@ -157,6 +160,7 @@
     <Compile Include="Models\BaiViet.cs">
       <DependentUpon>ShopOnline.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\CartShop.cs" />
     <Compile Include="Models\Common.cs" />
     <Compile Include="Models\CtDonHang.cs">
       <DependentUpon>ShopOnline.tt</DependentUpon>
@@ -203,22 +207,26 @@
     <Content Include="Assets\Client\img\anvat4.jpg" />
     <Content Include="Assets\Client\img\anvat5.png" />
     <Content Include="Assets\Client\img\anvat6.png" />
-    <Content Include="Assets\Client\img\anvat7.jpg" />
+    <Content Include="Assets\Client\img\anvat7.png" />
     <Content Include="Assets\Client\img\anvat8.png" />
     <Content Include="Assets\Client\img\BaiViet1.jpg" />
-    <Content Include="Assets\Client\img\BaiViet1.png" />
     <Content Include="Assets\Client\img\BaiViet2.jpg" />
-    <Content Include="Assets\Client\img\BaiVIet2.png" />
     <Content Include="Assets\Client\img\BaiViet3.jpg" />
-    <Content Include="Assets\Client\img\BaiViet3.png" />
     <Content Include="Assets\Client\img\BaiViet4.jpg" />
-    <Content Include="Assets\Client\img\BaiViet4.png" />
     <Content Include="Assets\Client\img\BaiViet5.jpg" />
-    <Content Include="Assets\Client\img\BaiViet5.png" />
     <Content Include="Assets\Client\img\BaiViet6.jpg" />
     <Content Include="Assets\Client\img\BaiViet7.jpg" />
     <Content Include="Assets\Client\img\BaiViet8.jpg" />
     <Content Include="Assets\Client\img\BaiViet9.jpg" />
+    <Content Include="Assets\Client\img\BaiViet\BaiViet1.jpg" />
+    <Content Include="Assets\Client\img\BaiViet\BaiViet2.jpg" />
+    <Content Include="Assets\Client\img\BaiViet\BaiViet3.jpg" />
+    <Content Include="Assets\Client\img\BaiViet\BaiViet4.jpg" />
+    <Content Include="Assets\Client\img\BaiViet\BaiViet5.jpg" />
+    <Content Include="Assets\Client\img\BaiViet\BaiViet6.jpg" />
+    <Content Include="Assets\Client\img\BaiViet\BaiViet7.jpg" />
+    <Content Include="Assets\Client\img\BaiViet\BaiViet8.jpg" />
+    <Content Include="Assets\Client\img\BaiViet\BaiViet9.jpg" />
     <Content Include="Assets\Client\img\bap-cai-thao-tui-500g-600g-202211240956377455_300x300.jpg" />
     <Content Include="Assets\Client\img\bg-icon.png" />
     <Content Include="Assets\Client\img\blog-1.jpg" />
@@ -497,6 +505,8 @@
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\ProductDetails\Index.cshtml" />
     <Content Include="Views\InformationBV\Index.cshtml" />
+    <Content Include="Views\Cart\Index.cshtml" />
+    <Content Include="Views\CheclOut\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -3,7 +3,7 @@
     TaiKhoan x = Session["TtDangNhap"] as TaiKhoan;
     if (x == null)
     {
-        Response.Redirect("~/Login/Index");
+        Response.Redirect("~/Login");
     }
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }

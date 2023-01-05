@@ -1,4 +1,4 @@
-﻿
+﻿@using Do_An_Web.Models;
 @{
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
@@ -21,273 +21,34 @@
     <!-- Main content -->
     <section class="content">
 
+        @{ int a = 1;
+                        foreach (SanPham i in Common.GetSanPhams())
+                        { <!-- /.col -->
+                            <div class="col-md-3">
+                                <div class="box box-warning">
+                                    <div class="box-header with-border">
+                                        <h3 class="box-title">@i.tenSP</h3>
 
-        <!-- /.col -->
-        <div class="col-md-3">
-            <div class="box box-warning">
-                <div class="box-header with-border">
-                    <h3 class="box-title">Bưởi Da Xanh</h3>
+                                        <div class="box-tools pull-right">
+                                            <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                                <i class="fa fa-minus"></i>
+                                            </button>
+                                        </div>
+                                        <!-- /.box-tools -->
+                                    </div>
+                                    <!-- /.box-header -->
+                                    <div class="box-body">
+                                        <img src="@i.hinhDD" />
+                                    </div>
+                                    <!-- /.box-body -->
+                                </div>
+                                <!-- /.box -->
+                            </div> <!-- /.col --> if (a++ >= 8) { break; }
 
-                    <div class="box-tools pull-right">
-                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
-                            <i class="fa fa-minus"></i>
-                        </button>
-                    </div>
-                    <!-- /.box-tools -->
-                </div>
-                <!-- /.box-header -->
-                <div class="box-body">
-                    <img src="~/Assets/Client/img/buoi-da-xanh-trai-tu-17kg-tro-len-202211160927072063_300x300.jpg" />
-                </div>
-                <!-- /.box-body -->
-            </div>
-            <!-- /.box -->
-        </div>
-        <!-- /.col -->
-        <!-- /.col -->
-        <div class="col-md-3">
-            <div class="box box-warning">
-                <div class="box-header with-border">
-                    <h3 class="box-title">Cam Vàng Úc</h3>
 
-                    <div class="box-tools pull-right">
-                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
-                            <i class="fa fa-minus"></i>
-                        </button>
-                    </div>
-                    <!-- /.box-tools -->
-                </div>
-                <!-- /.box-header -->
-                <div class="box-body">
-                    <img src="~/Assets/Client/img/cam-vang-uc-tui-1kg-3-5-trai-202211041112445740_300x300.jpg" />
-                </div>
-                <!-- /.box-body -->
-            </div>
-            <!-- /.box -->
-        </div>
-        <!-- /.col -->
-        <!-- /.col -->
-        <div class="col-md-3">
-            <div class="box box-warning">
-                <div class="box-header with-border">
-                    <h3 class="box-title">Gà Ta C.P</h3>
 
-                    <div class="box-tools pull-right">
-                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
-                            <i class="fa fa-minus"></i>
-                        </button>
-                    </div>
-                    <!-- /.box-tools -->
-                </div>
-                <!-- /.box-header -->
-                <div class="box-body">
-                    <img src="~/Assets/Client/img/ga-ta-nguyen-con-cp-goi-11kg-15kg-con-202208251429276036_300x300.jpg" />
-                </div>
-                <!-- /.box-body -->
-            </div>
-            <!-- /.box -->
-        </div>
-        <!-- /.col -->
-        <!-- /.col -->
-        <div class="col-md-3">
-            <div class="box box-warning">
-                <div class="box-header with-border">
-                    <h3 class="box-title">Cá Rô Đông Lạnh HTC</h3>
+                                                        } }
 
-                    <div class="box-tools pull-right">
-                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
-                            <i class="fa fa-minus"></i>
-                        </button>
-                    </div>
-                    <!-- /.box-tools -->
-                </div>
-                <!-- /.box-header -->
-                <div class="box-body">
-                    <img src="~/Assets/Client/img/ca-ro-dong-lanh-hdc-khay-300g-202210121525586917_300x300.png" />
-                </div>
-                <!-- /.box-body -->
-            </div>
-            <!-- /.box -->
-        </div>
-        <!-- /.col -->
-        <!-- /.col -->
-        <div class="col-md-3">
-            <div class="box box-warning">
-                <div class="box-header with-border">
-                    <h3 class="box-title">Thân Bò Úc Trung Đông</h3>
 
-                    <div class="box-tools pull-right">
-                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
-                            <i class="fa fa-minus"></i>
-                        </button>
-                    </div>
-                    <!-- /.box-tools -->
-                </div>
-                <!-- /.box-header -->
-                <div class="box-body">
-                    <img src="~/Assets/Client/img/than-bo-uc-tuoi-trung-dong-hut-chan-khong-khay-250g-202210111309257941_300x300.jpg" />
-                </div>
-                <!-- /.box-body -->
-            </div>
-            <!-- /.box -->
-        </div>
-        <!-- /.col -->
-        <!-- /.col -->
-        <div class="col-md-3">
-            <div class="box box-warning">
-                <div class="box-header with-border">
-                    <h3 class="box-title">Cá Basa Tươi</h3>
-
-                    <div class="box-tools pull-right">
-                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
-                            <i class="fa fa-minus"></i>
-                        </button>
-                    </div>
-                    <!-- /.box-tools -->
-                </div>
-                <!-- /.box-header -->
-                <div class="box-body">
-                    <img src="~/Assets/Client/img/ca-basa-cat-khuc-khay-500g-202207221129506109_300x300.jpg" />
-                </div>
-                <!-- /.box-body -->
-            </div>
-            <!-- /.box -->
-        </div>
-        <!-- /.col -->
-        <!-- /.col -->
-        <div class="col-md-3">
-            <div class="box box-warning">
-                <div class="box-header with-border">
-                    <h3 class="box-title">Thùng 48 Hộp Sữa Tươi Nestlé Socola</h3>
-
-                    <div class="box-tools pull-right">
-                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
-                            <i class="fa fa-minus"></i>
-                        </button>
-                    </div>
-                    <!-- /.box-tools -->
-                </div>
-                <!-- /.box-header -->
-                <div class="box-body">
-                    <img src="~/Assets/Client/img/thung-48-hop-sua-tiet-trung-socola-nestle-180ml-202210280911472022_300x300.jpg" />
-                </div>
-                <!-- /.box-body -->
-            </div>
-            <!-- /.box -->
-        </div>
-        <!-- /.col -->
-        <!-- /.col -->
-        <div class="col-md-3">
-            <div class="box box-warning">
-                <div class="box-header with-border">
-                    <h3 class="box-title">Kẹo Dẻo Hình Gấu Yumearth</h3>
-
-                    <div class="box-tools pull-right">
-                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
-                            <i class="fa fa-minus"></i>
-                        </button>
-                    </div>
-                    <!-- /.box-tools -->
-                </div>
-                <!-- /.box-header -->
-                <div class="box-body">
-                    <img src="~/Assets/Client/img/keo-deo-huu-co-hinh-gau-yumearth-goi-50g-202205191553161878_300x300.jpg" />
-                </div>
-                <!-- /.box-body -->
-            </div>
-            <!-- /.box -->
-        </div>
-        <!-- /.col -->
-        <!-- /.col -->
-        <div class="col-md-3">
-            <div class="box box-warning">
-                <div class="box-header with-border">
-                    <h3 class="box-title">Cà Chua Bi</h3>
-
-                    <div class="box-tools pull-right">
-                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
-                            <i class="fa fa-minus"></i>
-                        </button>
-                    </div>
-                    <!-- /.box-tools -->
-                </div>
-                <!-- /.box-header -->
-                <div class="box-body">
-                    <img src="~/Assets/Client/img/ca-chua-bi-hop-300g-202209060854250085_300x300.jpg" />
-                </div>
-                <!-- /.box-body -->
-            </div>
-            <!-- /.box -->
-        </div>
-        <!-- /.col -->
-        <!-- /.col -->
-        <div class="col-md-3">
-            <div class="box box-warning">
-                <div class="box-header with-border">
-                    <h3 class="box-title">Sữa Chua Tiết Trùng 'True Milk'</h3>
-
-                    <div class="box-tools pull-right">
-                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
-                            <i class="fa fa-minus"></i>
-                        </button>
-                    </div>
-                    <!-- /.box-tools -->
-                </div>
-                <!-- /.box-header -->
-                <div class="box-body">
-                    <img src="~/Assets/Client/img/thung-48-hop-sua-chua-uong-huong-dau-chuoi-va-lua-mach-th-true-yogurt-top-kid-110ml-202209281424559749_300x300.jpg" />
-                </div>
-                <!-- /.box-body -->
-            </div>
-            <!-- /.box -->
-        </div>
-        <!-- /.col -->
-        <!-- /.col -->
-        <div class="col-md-3">
-            <div class="box box-warning">
-                <div class="box-header with-border">
-                    <h3 class="box-title">Bắp Cải Thảo Túi</h3>
-
-                    <div class="box-tools pull-right">
-                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
-                            <i class="fa fa-minus"></i>
-                        </button>
-                    </div>
-                    <!-- /.box-tools -->
-                </div>
-                <!-- /.box-header -->
-                <div class="box-body">
-                    <img src="~/Assets/Client/img/bap-cai-thao-tui-500g-600g-202211240956377455_300x300.jpg" />
-                </div>
-                <!-- /.box-body -->
-            </div>
-            <!-- /.box -->
-        </div>
-        <!-- /.col -->
-        <!-- /.col -->
-        <div class="col-md-3">
-            <div class="box box-warning">
-                <div class="box-header with-border">
-                    <h3 class="box-title">Súp nui thịt bằm bí đỏ Cây Thị</h3>
-
-                    <div class="box-tools pull-right">
-                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
-                            <i class="fa fa-minus"></i>
-                        </button>
-                    </div>
-                    <!-- /.box-tools -->
-                </div>
-                <!-- /.box-header -->
-                <div class="box-body">
-                    <img src="~/Assets/Client/img/sup-nui-thit-bam-bi-do-cay-thi-goi-260g-202205161524295049_300x300.jpg" />
-                </div>
-                <!-- /.box-body -->
-            </div>
-            <!-- /.box -->
-        </div>
-        <!-- /.col -->
 
     </section>
-    <!-- /.content -->
-</div>
-<link href="~/Content/img.css" rel="stylesheet" />

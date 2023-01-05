@@ -18,6 +18,7 @@
           <Property Name="noiDung" Type="nvarchar" MaxLength="4000" />
           <Property Name="taiKhoan" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="daDuyet" Type="bit" />
+          <Property Name="soLanDoc" Type="int" />
         </EntityType>
         <EntityType Name="CtDonHang">
           <Key>
@@ -237,6 +238,7 @@
           <Property Name="taiKhoan" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="daDuyet" Type="Boolean" />
           <NavigationProperty Name="TaiKhoan1" Relationship="Self.FK__BaiViet__taiKhoa__3E52440B" FromRole="BaiViet" ToRole="TaiKhoan" />
+          <Property Name="soLanDoc" Type="Int32" />
         </EntityType>
         <EntityType Name="CtDonHang">
           <Key>
@@ -460,6 +462,7 @@
           <EntitySetMapping Name="BaiViet">
             <EntityTypeMapping TypeName="ShopOnline_DemoModel.BaiViet">
               <MappingFragment StoreEntitySet="BaiViet">
+                <ScalarProperty Name="soLanDoc" ColumnName="soLanDoc" />
                 <ScalarProperty Name="maBV" ColumnName="maBV" />
                 <ScalarProperty Name="tenBV" ColumnName="tenBV" />
                 <ScalarProperty Name="hinhDD" ColumnName="hinhDD" />

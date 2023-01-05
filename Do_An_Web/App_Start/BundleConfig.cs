@@ -33,7 +33,7 @@ namespace Do_An_Web.App_Start
                                                                     "~/Scripts/bootstrap.min.js", 
                                                                     "~/Scripts/jquery.slimscroll.min.js",
                                                                     "~/Scripts/fastclick.js",
-                                                                    "~/ Scripts / adminlte.min.js",
+                                                                    "~/Scripts/adminlte.min.js",
                                                                     "~/Scripts/jquery.dataTables.min.js",
                                                                     "~/Scripts/dataTables.bootstrap.min.js",
                                                                     "~/Scripts/demo.js"));

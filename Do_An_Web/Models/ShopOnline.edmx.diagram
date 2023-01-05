@@ -9,9 +9,9 @@
         <EntityTypeShape EntityType="ShopOnline_DemoModel.CtDonHang" Width="1.5" PointX="7.5" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ShopOnline_DemoModel.DonHang" Width="1.5" PointX="5.375" PointY="1.625" IsExpanded="true" />
         <EntityTypeShape EntityType="ShopOnline_DemoModel.KhachHang" Width="1.5" PointX="6.5" PointY="5.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ShopOnline_DemoModel.LoaiSP" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopOnline_DemoModel.LoaiSP" Width="1.5" PointX="0.625" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ShopOnline_DemoModel.SanPham" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ShopOnline_DemoModel.TaiKhoan" Width="1.5" PointX="3.375" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopOnline_DemoModel.TaiKhoan" Width="1.5" PointX="3.75" PointY="5.5" IsExpanded="true" />
         <AssociationConnector Association="ShopOnline_DemoModel.FK__BaiViet__taiKhoa__3E52440B" ManuallyRouted="false" />
         <AssociationConnector Association="ShopOnline_DemoModel.FK__CtDonHang__maSP__5629CD9C" ManuallyRouted="false" />
         <AssociationConnector Association="ShopOnline_DemoModel.FK__CtDonHang__soDH__5535A963" ManuallyRouted="false" />

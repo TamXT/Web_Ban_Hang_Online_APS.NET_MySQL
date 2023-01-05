@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     SanPham i = ViewData["SpCanXem"] as SanPham;
 }
-
+<!-- Chi tiết sản phẩm -->
 <div class="container-fluid page-header wow fadeIn" data-wow-delay="0.1s">
     <div class="container">
         <h1 class="display-3 mb-3 animated slideInDown">Chi Tiết Sản Phẩm</h1>
@@ -31,9 +31,70 @@
                 <h5>********</h5>
                 <h3 style="color:red">@String.Format("{0:#,## Đồng}", i.giaBan)</h3>
                 <h5>@i.ndTomTat</h5>
-                <button style="background-color:aquamarine">BUY ONLINE</button>
+                @using (Html.BeginForm("AddToCart", "Home", FormMethod.Post))
+                {
+                   <input name="maSP" type="hidden" value="@i.maSP" />
+                   <button class="btn btn-primary">Mua</button>
+                }
             </div>
         </div>
     </div>
 </div>
+
+
+
+
+
+<!-- Blog End -->
+<h1 style="text-align:center">Sản Phẩm Liên Quan</h1>
+<div class="tab-content">
+    @{
+        int c = 0;
+        foreach (LoaiSP j in Common.GetLoaiSPs())
+        {
+            <div id="tab-@j.maLoai" class="tab-pane fade show p-0 @(c++==0?"active":"")">
+                <div class="row g-4">
+                    @{
+
+                        int b = 1;
+                        foreach (SanPham l in Common.GetSanPhamsByLoaiSPs(j.maLoai))
+                        {
+                            <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                                <div class="product-item">
+                                    <div class="position-relative bg-light overflow-hidden">
+                                        <img class="img-fluid w-100" src="@l.hinhDD" alt="">
+                                        <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">New</div>
+                                    </div>
+                                    <div class="text-center p-4">
+                                        <a class="d-block h5 mb-2" href="@Url.Action("Index", "ProductDetails", new {maSanPham=l.maSP})">@l.tenSP</a>
+                                        <span class="text-primary me-1">@l.giaBan</span>
+                                        <span class="text-body text-decoration-line-through">@l.giamGia</span>
+                                    </div>
+                                    <div class="d-flex border-top">
+                                        <small class="w-50 text-center border-end py-2">
+                                            <a class="text-body" href="@Url.Action("Index", "ProductDetails", new {maSanPham=l.maSP})"><i class="fa fa-eye text-primary me-2"></i>Xem chi tiết</a>
+                                        </small>
+                                        @using (Html.BeginForm("AddToCart", "Home", FormMethod.Post))
+                                        {
+                                            <small class="w-50 text-center py-2">
+                                                <a class="text-body" name="maSP" href="@Url.Action("Index", "Cart")"><i class="fa fa-shopping-bag text-primary me-2"></i>Mua</a>
+                                            </small>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                            if (b++ >= 4)
+                            {
+                                break;
+                            }
+                        }
+                    }
+                </div>
+            </div>
+        }
+    }
+
+</div>
+
+
 

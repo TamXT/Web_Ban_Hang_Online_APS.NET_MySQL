@@ -23,6 +23,7 @@ namespace Do_An_Web.Models
         public string noiDung { get; set; }
         public string taiKhoan { get; set; }
         public Nullable<bool> daDuyet { get; set; }
+        public Nullable<int> soLanDoc { get; set; }
     
         public virtual TaiKhoan TaiKhoan1 { get; set; }
     }

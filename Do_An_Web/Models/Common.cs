@@ -8,6 +8,7 @@ namespace Do_An_Web.Models
 {
     public class Common
     {
+        static DbContext cn = new DbContext("name=ShopOnline_Demo");
         public static List<SanPham> GetSanPhams()
         {
             List<SanPham> l = new List<SanPham>();
@@ -34,9 +35,32 @@ namespace Do_An_Web.Models
         {
             return new DbContext("name=ShopOnline_Demo").Set<KhachHang>().ToList();
         }
-        public static List<BaiViet> GetBaiViet()
+        public static List<BaiViet> GetBaiViet(int n)
         {
-            return new DbContext("name=ShopOnline_Demo").Set<BaiViet>().ToList();
+            List<BaiViet> l = new List<BaiViet>();
+            ShopOnline_Demo db = new ShopOnline_Demo();
+            l = db.BaiViet.Where(m => m.daDuyet == true).OrderByDescending(bv => bv.ngayDang).Take(n).ToList<BaiViet>();
+            return l;
+            
+        }
+        public static SanPham GetProductById(string maSP)
+        {
+
+            DbContext cn = new DbContext("name=ShopOnline_Demo");
+            
+            return cn.Set<SanPham>().Find(maSP);
+        }
+        public static string getNameOfProductById(string maSP)
+        {
+            
+
+            return cn.Set<SanPham>().Find(maSP).tenSP;
+        }
+        public static string getImageOfProductById(string maSP)
+        {
+           
+            return cn.Set<SanPham>().Find(maSP).hinhDD;
         }
     }
+
 }
